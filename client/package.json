@@ -1,0 +1,58 @@
+{
+  "name": "stockp-client",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "3.3.7",
+    "flow": "^0.2.3",
+    "mobx": "^5.8.0",
+    "mobx-react": "^5.4.3",
+    "node-sass": "4.6.1",
+    "node-sass-chokidar": "0.0.3",
+    "npm-run-all": "4.1.2",
+    "react": "16.2.0",
+    "react-bootstrap": "0.32.1",
+    "react-dom": "16.2.0",
+    "react-pretty-numbers": "^3.0.0",
+    "react-router-dom": "4.2.2",
+    "react-scripts": "1.1.3",
+    "react-select": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "flow-bin": "^0.76.0",
+    "husky": "^0.14.3",
+    "prettier": "1.13.5",
+    "pretty-quick": "^1.6.0",
+    "react-test-renderer": "^16.4.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/registerServiceWorker.js",
+      "!src/assets/*",
+      "!src/config/*",
+      "!src/**/style.js"
+    ]
+  },
+  "scripts": {
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts build",
+    "lint": "flow && pretty-quick --staged && eslint --config node_modules/eslint-config-react-app/index.js src/",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
