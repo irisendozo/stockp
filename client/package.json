@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
-    "bootstrap": "3.3.7",
+    "bootstrap": "3.4.1",
     "flow": "^0.2.3",
     "mobx": "^5.8.0",
     "mobx-react": "^5.4.3",
